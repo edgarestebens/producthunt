@@ -9,6 +9,8 @@ Rails.application.routes.draw do
 	 
 	resources :products #genera por debajo las rutas que estan arriba
   	
+  	root 'products#index' #arranca como pagina inicial el index
+
   	#resources :products, only: [:index] solo mostraria la ruta de index
   	#resources :products, only: [:index, :create] mostraria index y create
 

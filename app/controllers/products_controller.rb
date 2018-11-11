@@ -1,5 +1,10 @@
 
 class ProductsController < ApplicationController
+
+	before_action :private_access, except: [:index, :show] #seguridad para que cada vez que se llame alguna
+	#de las rutas tenga una seguridad y no lo deje ingresar si el usuario no esta logueado
+	
+
 	def index
 		@products = Product.all
 	end

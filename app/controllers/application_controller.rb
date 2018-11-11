@@ -20,4 +20,14 @@ class ApplicationController < ActionController::Base
 	  rescue ActiveRecord::RecordNotFound
 	  end
 	  helper_method :current_user
+
+	  def private_access #funcion que redirecciona para la seguridad si no se cumple en controlador productos
+	    redirect_to :login unless signed_in?
+	  end
+
+	  def public_access #funcion que permite que si el usuario esta logueado y se va para login lo devuelva al principal
+	  redirect_to root_path if signed_in?
+end
+
+
 end

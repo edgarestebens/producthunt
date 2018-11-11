@@ -1,4 +1,9 @@
 class SessionsController < ApplicationController
+  
+  #si el usuario ya esta autenticado lo devuelva al principal 
+  before_action :private_access, only: [:destroy]
+  before_action :public_access, except: [:destroy]
+
   def new
   end
 

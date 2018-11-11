@@ -11,6 +11,11 @@
 
   <body>
 
+    <%#temporal ya que no me funciona el salir de la barra de navegacion%>
+    <% if signed_in? %>
+      <div>Hola <%= current_user.name %> <%= link_to "Salir", logout_path, method: :delete %></div>
+    <% end %>
+
     <%#barra de navegacion usando la gema de la pagina gravatar para la foto%>
     <nav class="navbar navbar-default navbar-static-top">
       <div class="container">

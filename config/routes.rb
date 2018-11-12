@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 	resources :products #genera por debajo las rutas que estan arriba
   	
   	resources :products do
-  		resources :comments, only: [:create]
-
-	end
+      resource :vote, only: [:create, :destroy] 
+      resources :comments, only: [:create]
+    end
 end

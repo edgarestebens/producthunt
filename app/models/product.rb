@@ -14,6 +14,7 @@
 class Product < ActiveRecord::Base
 	belongs_to :user #agrega un atributo a los productos para poder acceder al usuario y con ese usuario obtener el 
 	#nombre id etc.
+	has_many :comments #agrega un metodo comments al modelo productos para agregar los comentarios de ese producto
 	validates :name, presence: true
 	validates :url, presence: true
 end

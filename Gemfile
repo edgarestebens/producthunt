@@ -31,6 +31,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'gravatar-ultimate'
 gem 'xmlrpc'
 gem 'annotate'
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 

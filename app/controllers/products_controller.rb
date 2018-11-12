@@ -14,13 +14,14 @@ class ProductsController < ApplicationController
 	end
 
 	def create
-	  @product = Product.new(product_params)
-	  if @product.save
-	    redirect_to products_path, notice: "El producto fue publicado con éxito"
-	  else
-	    render :new #publicar de nuevo el formulario de new
-	  end
-	end
+		  @product = Product.new(product_params)
+		  @product.user = current_user
+		  if @product.save
+		    redirect_to products_path, notice: "El producto fue publicado con éxito"
+		  else
+		    render :new
+		  end
+		end
 
 	def show
 	  @product = Product.find(params[:id])
